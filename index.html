@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agiletestware - Software for QA and Development Tools</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="keywords"
+      content="soapui, soap ui, testing, selenium, webdriver, web driver, alm, hp alm, hp, quality center, qualitycenter, junit, pytest, jenkins, hudson, teamcity, bamboo, atlassian bamboo, alm integration, quality center integration, readyapi, testrail, gurock"
+    />
+    <meta name="author" content="Agiletestware" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/static/assets/css/agiletestware-allcss.css?v=1.7" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/static/assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/static/assets/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/assets/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/assets/images/apple-touch-icon-114x114.png" />
+    <link href="/static/assets/css/w3.css" rel="stylesheet" />
+    <link href="/static/assets/css/spinner.css" rel="stylesheet" />
+
+    <link href="/static/assets/css/app.css" rel="stylesheet" />
+
+    <!-- Polyfill.io for browser compatibility -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue-recaptcha@latest/dist/vue-recaptcha.min.js"></script>
+    <script src="https://unpkg.com/vue@latest/dist/vue.js" defer></script>
+    <script>
+      function loadCSS(href, before, media) {
+        "use strict";
+        var ss = window.document.createElement("link");
+        var ref = before || window.document.getElementsByTagName("script")[0];
+        ss.rel = "stylesheet";
+        ss.href = href;
+        ss.media = "only x";
+        ref.parentNode.insertBefore(ss, ref);
+        setTimeout(function() {
+          ss.media = media || "all";
+        });
+        return ss;
+      }
+      // load Google Web Font
+      loadCSS("https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic");
+      // load Google Web Font
+      loadCSS("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+    </script>
+    <style>
+      .agiletestware_body #header .nav > li > a {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      @media (max-width: 767px) {
+        .agiletestware_body #header .nav > li > a {
+          color: #fff;
+        }
+      }
+
+      .agiletestwarehome_body .btn-pangolin,
+      .pangolinribbontag {
+        background-color: #1091ea !important;
+        border-color: #1091ea !important;
+      }
+
+      .agiletestwarehome_body .btn-goliath,
+      .goliathribbontag {
+        background-color: #ff761d !important;
+        border-color: #ff761d !important;
+      }
+
+      .agiletestwarehome_body .btn-firefly {
+        background-color: #118200 !important;
+        border-color: #118200 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+    <script type="text/javascript" src="/static/assets/js/agiletestware-alljs.js"></script>
+    <script type="text/javascript" src="/static/assets/js/script-home.js"></script>
+    <!-- <script type="text/javascript" src="/static/assets/js/agiletestware-alljs.js?1.0"></script> -->
+    <script type="text/javascript" src="/static/assets/js/isotope.pkgd.min.js"></script>
+    <!-- <script type="text/javascript" src="./static/assets/js/script-dragonfly.js?1.0"></script>   -->
+    <script type="text/javascript" src="/static/assets/js/jquery.validate.min.js?1.0"></script>
+    <!-- <script type="text/javascript" src="./static/assets/js/additional-methods.min.js?1.0"></script> -->
+    <!-- <script type="text/javascript" src="/static/assets/js/register-dragonfly-custom.js?1.0"></script> -->
+    <!-- <script type="text/javascript" src="/static/assets/js/script-reg-dragonfly.js?1.0"></script> -->
+    <script type="text/javascript">
+      window._chatlio = window._chatlio || [];
+      !(function() {
+        var t = document.getElementById("chatlio-widget-embed");
+        if (t && window.ChatlioReact && _chatlio.init) return void _chatlio.init(t, ChatlioReact);
+        for (
+          var e = function(t) {
+              return function() {
+                _chatlio.push([t].concat(arguments));
+              };
+            },
+            i = ["configure", "identify", "track", "show", "hide", "isShown", "isOnline", "page", "open", "showOrHide"],
+            a = 0;
+          a < i.length;
+          a++
+        )
+          _chatlio[i[a]] || (_chatlio[i[a]] = e(i[a]));
+        var n = document.createElement("script"),
+          c = document.getElementsByTagName("script")[0];
+        (n.id = "chatlio-widget-embed"), (n.src = "https://w.chatlio.com/w.chatlio-widget.js"), (n.async = !0), n.setAttribute("data-embed-version", "2.3");
+        n.setAttribute("data-widget-id", "76e10e85-fcbd-4bb1-69d9-433d77176bc8");
+        c.parentNode.insertBefore(n, c);
+      })();
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+    <script type="text/javascript" src="/static/assets/js/user-analytics.js"></script>
+  </body>
+</html>

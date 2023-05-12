@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  agiletestware:
+    build:
+      context: .
+      dockerfile: Dockerfile-api
+    image: agiletestware:latest
+    container_name: agiletestware-api
+    restart: always
+    # volumes:
+    #   - .:/app
+    ports: 
+      - "8080:8080"
+    # command: bash -c 'yarn start'
+
+  agiletestware_nginx:
+    build: .
+    image: agiletestware:nginx
+    container_name: "agiletestware-nginx"
+    restart: always
+    # volumes:
+    #   - ./nginx/nginx-local.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+

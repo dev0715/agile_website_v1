@@ -1,0 +1,61 @@
+image: docker:19.03.13
+
+services:
+  - docker:19.03.13-dind
+
+stages:
+  - build-vue
+  - build-docker
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+build-vue:
+  stage: build-vue
+  image: node:12-alpine
+  before_script:
+    - yarn install
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - dist
+    expire_in: 20 minutes
+  cache:
+    key: dependencies
+    paths:
+      - node_modules/
+  only:
+    - master
+
+build-docker:
+  stage: build-docker
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
+    - docker build -t $CI_REGISTRY_IMAGE:api -f Dockerfile-api .
+    - docker push $CI_REGISTRY_IMAGE:api
+  dependencies:
+    - build-vue
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  image: ubuntu
+  script:
+    - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - chmod 700 -R ~/.ssh
+    - ssh-keyscan -H $PROD_SERVER_HOST >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - ssh root@$PROD_SERVER_HOST "docker-compose pull website_production;docker-compose stop website_production;docker-compose rm -f website_production;docker-compose up -d website_production;docker image prune -a -f"
+    - ssh root@$PROD_SERVER_HOST "docker-compose pull agiletestware_api;docker-compose stop agiletestware_api;docker-compose rm -f agiletestware_api;docker-compose up -d agiletestware_api;docker image prune -a -f"
+  only:
+    - master

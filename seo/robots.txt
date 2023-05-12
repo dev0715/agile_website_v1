@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /maven
+Allow: /
+Sitemap: https://www.agiletestware.com/sitemap.xml
+Sitemap: https://www.agiletestware.com/sitemap_index.xml

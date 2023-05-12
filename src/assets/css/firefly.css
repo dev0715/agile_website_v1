@@ -1,0 +1,93 @@
+.firefly .trial-cta {
+  background: #320561;
+  padding-right: 20px !important;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.header-text-firefly {
+  text-align: left;
+}
+
+.header-text-firefly .btn-section .btn-custom {
+  display: inline-block;
+  line-height: 19px;
+  margin: 20px 15px 0;
+}
+figure {
+  margin: 1em 10px !important;
+}
+.headerimage2 {
+  margin-top: -160px;
+}
+
+.firefly .btn-freetrial {
+  color: #320561 !important;
+}
+
+.firefly ul.list-icon li .fa {
+  background-color: #490A8C;
+}
+
+.firefly h2.head-h2 {
+  color: #490A8C;
+}
+.firefly ul.list-icon li {
+  font-size: 15px;
+}
+
+.firefly .tbl-prc-footer a.btn-purchase {
+  background: #320561;
+  border-color: #320561;
+}
+
+.agiletestware_body .panel-default > .panel-heading {
+  color: #490A8C;
+}
+
+.firefly h3.head-h3 {
+  color: #490A8C;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.firefly .release-maintenance {
+  margin-bottom: 0px;
+}
+
+.firefly .release {
+  color: #490A8C !important;
+  background: transparent !important;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.firefly .dwn-btn .btn-custom {
+  background-color: #1A8012;
+}
+
+.footermenu img{
+  height: 36px;
+}
+
+.firefly #footer {
+  background-color: #1D023A;
+}
+
+.firefly .footermenu h4 {
+  color: #FFF;
+}
+
+.firefly .home-newsletter .single .btn {
+  background: #1A8012 !important;
+  border-bottom-color: #1A8012 !important;
+}
+
+.firefly .reg_btn, .firefly .reg_btn:hover {
+  background-color: #118200;
+}
+.form-control.required:focus {
+  box-shadow: none;
+  background: none;
+  border-color: #A2A2A2;
+}
